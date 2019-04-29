@@ -1,5 +1,6 @@
 import  sys, socket
 BROADCAST = '255.255.255.255'
+MAGIC='µłeŧþøæ'  # string to separate name and message in a sent packet
 
 IP = BROADCAST
 PORT = 10000
@@ -10,5 +11,5 @@ s.setsockopt(socket.SOL_SOCKET, socket.SO_BROADCAST, 1)
 
 while True:
   msg = input("::>  ")
-  s.sendto(msg.encode(), SERVER)
+  s.sendto(('Client' + MAGIC + msg).encode(), SERVER)
   
