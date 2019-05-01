@@ -135,6 +135,8 @@ print_in_colour(f'This machine\'s IPv4 address is {this_ip}\n\n', CLR_LG)
 # get user's name and pack with MAGIC string to make message header
 name = input(CLR_LM + 'Your name?  ' + RESET)
 header = name + MAGIC
+
+# Spawn a thread to listen for incoming messages
 t_rcv = threading.Thread(target=receive, name='t_rcv')
 t_rcv.start()
 
