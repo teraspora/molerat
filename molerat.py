@@ -13,12 +13,13 @@ CLR_LB = '\u001B[94m'
 CLR_LM = '\u001B[95m'
 CLR_LC = '\u001B[96m'
 RESET  = '\u001B[0m'
+REVERSE_VIDEO = "\u001B[7m"
 
 USAGE_INFO = (
       'Usage:\n\n'
       'Molerat Messenger:  A simple UDP subnet messenger program\n'
       '~~~~~~~ ~~~~~~~~~   ~ ~~~~~~ ~~~ ~~~~~~ ~~~~~~~~~ ~~~~~~~\n'
-      'Requires Python 3: run in terminal: "python3 ecsu.py"\n'
+      'Requires Python 3: run in terminal: "python3 molerat.py"\n'
       'Run it on another computer too, and send text messages back and forth.\n\n'
       'Note: the program uses UDP, which does not guarantee delivery;\n'
       'some messages may therefore not arrive, and so the program should not\n'
@@ -100,7 +101,10 @@ def process_command(cmd):
   Call the appropriate function to handle command input by user.
   """
   cmd_id = cmd[0]
-  commands[cmd_id]()
+  if cmd_id in commands:
+    commands[cmd_id]()
+  else:
+    print_in_colour(f'{REVERSE_VIDEO}*** ERROR: !{cmd_id} is not a valid command ***\n', CLR_R)
 
 def print_info():
   """
