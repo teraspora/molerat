@@ -17,5 +17,5 @@ I've just been informed that the ANSI colour codes don't work in Windows, and ne
 `Use Network Control Panel Applet to set hostname
 hostname -s is not supported.`
 
-So I need to find out a way to get colour output in the Windos command shell, and to implement different colour codes dependent on operating system.
+So I need to find out a way to get colour output in the Windows command shell, and to implement different colour codes dependent on operating system.
 
