@@ -2,7 +2,7 @@
 # Author: John Lynch
 # April 2019
 
-import  sys, socket, threading, os, datetime
+import socket, threading, os, datetime
 
 # ANSI Colour codes for terminal output
 CLR_R  = '\u001B[31m'
