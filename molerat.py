@@ -46,7 +46,7 @@ def print_in_colour(text, colour_code = CLR_LB):
   print(colour_code + text + RESET, end = '')
 
 PROMPT = CLR_LC + datetime.datetime.now().strftime('%H:%M') + CLR_R + ':> ' + RESET
-COMMAND_SIGNIFIER = '!'  # if 1st char of input signifies command, not message
+COMMAND_SIGNIFIER = '!'  # if this is first char of input, it signifies a command, not a message
 MAGIC='µłeŧþøæ'  # string to separate name and message in a sent packet
 BROADCAST = '255.255.255.255'
 IP = ''
@@ -91,7 +91,7 @@ def quit():
   """
   Close the socket and quit the program.
   """
-  print_in_colour('\n*** Exiting. ***', CLR_R)
+  print_in_colour('\n*** Exiting. ***\n', CLR_R)
   s.close()
   os._exit(0)
 
