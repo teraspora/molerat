@@ -1,6 +1,6 @@
 # Molerat Messenger: A simple UDP subnet messenger program
 
-## Requires Python 3: run in terminal: "python3 molerat.py"
+## Requires Python 3: run in terminal: `python3 molerat.py`
 
 Run it on another computer too, and send text messages back and forth.
 
