@@ -16,26 +16,26 @@ RESET  = '\u001B[0m'
 REVERSE_VIDEO = "\u001B[7m"
 
 USAGE_INFO = (
-      'Usage:\n\n'
-      'Molerat Messenger:  A simple UDP subnet messenger program\n'
-      '~~~~~~~ ~~~~~~~~~   ~ ~~~~~~ ~~~ ~~~~~~ ~~~~~~~~~ ~~~~~~~\n'
-      'Requires Python 3: run in terminal: "python3 molerat.py"\n'
-      'Run it on another computer too, and send text messages back and forth.\n\n'
-      'Note: the program uses UDP, which does not guarantee delivery;\n'
-      'some messages may therefore not arrive, and so the program should not\n'
-      'be used for critical systems.\n\n'
-      'Enter your name when requested.\n'
-      'Enter messages directly at the prompt, or commands prefixed by a bang ("!").\n\n'
-      'Commands:\n'
-      '!p  Print all messages sent and received\n'
-      '!n  Print general info\n'
-      '!q  Quit the program\n'
-      '!h  Print this usage info\n\n'
+      f'\n{CLR_LC}Usage:{CLR_LM}\n\n'
+      f'{CLR_LR}Molerat Messenger:{CLR_LM}  A simple UDP subnet messenger program\n'
+      f'~~~~~~~ ~~~~~~~~~   ~ ~~~~~~ ~~~ ~~~~~~ ~~~~~~~~~ ~~~~~~~\n'
+      f'Requires Python 3: run in terminal: "python3 ecsu.py"\n'
+      f'Run it on another computer too, and send text messages back and forth.\n\n'
+      f'{CLR_LC}Note:{CLR_LM} the program uses UDP, which does not guarantee delivery;\n'
+      f'some messages may therefore not arrive, and so the program should not\n'
+      f'be used for critical systems.\n\n'
+      f'Enter your name when requested.\n'
+      f'Enter messages directly at the prompt, or commands prefixed by a bang ("!").\n\n'
+      f'{CLR_LC}Commands:{CLR_LM}\n'
+      f'{RESET}!p{CLR_LM}  Print all messages sent and received\n'
+      f'{RESET}!n{CLR_LM}  Print general info\n'
+      f'{RESET}!q{CLR_LM}  Quit the program\n'
+      f'{RESET}!h{CLR_LM}  Print this usage info\n\n'
   )
 PROGRAM_NAME = 'Molerat Messenger '
 
 WELCOME_MSG = (
-    'Welcome to ' + CLR_LR + PROGRAM_NAME + CLR_LM + 
+    '\nWelcome to ' + CLR_LR + PROGRAM_NAME + CLR_LM + 
     '- a simple UDP subnet messenger program\n'
     'For help type "!h".\n'
 )
@@ -114,7 +114,7 @@ def print_info():
   info = (
       f'Logged in as {name} to {this_ip}.\n'
       f'Messages: sent {len(messages_sent)}, received {len(messages_received)} '
-      f'from {num_correspondents} correspondents.\n'
+      f'from {num_correspondents} correspondent{"" if num_correspondents == 1 else "s"}.\n'
   )
   print_in_colour(info, CLR_LG)
 
