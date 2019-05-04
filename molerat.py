@@ -2,7 +2,10 @@
 # Author: John Lynch
 # April 2019
 
-import socket, threading, os, datetime
+import socket, threading, os, datetime, colorama
+
+colorama.init() # filters console traffic to 
+# implement ANSI colour codes for Windows
 
 # ANSI Colour codes for terminal output
 CLR_R  = '\u001B[31m'
